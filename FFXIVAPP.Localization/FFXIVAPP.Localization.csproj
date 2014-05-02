@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C1F53F0-6E1C-419F-86B1-C777E6C65834}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FFXIVAPP.Localization</RootNamespace>
+    <AssemblyName>FFXIVAPP.Localization</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\distribution\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="English\Locale.Radar.cs" />
+    <Compile Include="French\Locale.Client.cs" />
+    <Compile Include="French\Locale.cs" />
+    <Compile Include="French\Locale.Event.cs" />
+    <Compile Include="French\Locale.Informer.cs" />
+    <Compile Include="French\Locale.Log.cs" />
+    <Compile Include="French\Locale.Parse.cs" />
+    <Compile Include="French\Locale.Radar.cs" />
+    <Compile Include="French\Locale.Widgets.cs" />
+    <Compile Include="German\Locale.Client.cs" />
+    <Compile Include="German\Locale.cs" />
+    <Compile Include="German\Locale.Event.cs" />
+    <Compile Include="German\Locale.Informer.cs" />
+    <Compile Include="German\Locale.Log.cs" />
+    <Compile Include="German\Locale.Parse.cs" />
+    <Compile Include="German\Locale.Radar.cs" />
+    <Compile Include="German\Locale.Widgets.cs" />
+    <Compile Include="Japanese\Locale.Client.cs" />
+    <Compile Include="Japanese\Locale.cs" />
+    <Compile Include="Japanese\Locale.Event.cs" />
+    <Compile Include="Japanese\Locale.Informer.cs" />
+    <Compile Include="Japanese\Locale.Log.cs" />
+    <Compile Include="Japanese\Locale.Parse.cs" />
+    <Compile Include="Japanese\Locale.Radar.cs" />
+    <Compile Include="Japanese\Locale.Widgets.cs" />
+    <Compile Include="English\Locale.Log.cs" />
+    <Compile Include="English\Locale.Widgets.cs" />
+    <Compile Include="English\Locale.Parse.cs" />
+    <Compile Include="English\Locale.Informer.cs" />
+    <Compile Include="English\Locale.Event.cs" />
+    <Compile Include="English\Locale.Client.cs" />
+    <Compile Include="English\Locale.cs" />
+    <Compile Include="LocaleHelper.cs" />
+    <Compile Include="LocaleDictionary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
