@@ -45,6 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chinese\Locale.Client.cs" />
+    <Compile Include="Chinese\Locale.cs" />
+    <Compile Include="Chinese\Locale.Event.cs" />
+    <Compile Include="Chinese\Locale.Informer.cs" />
+    <Compile Include="Chinese\Locale.Log.cs" />
+    <Compile Include="Chinese\Locale.Parse.cs" />
+    <Compile Include="Chinese\Locale.Radar.cs" />
+    <Compile Include="Chinese\Locale.Widgets.cs" />
     <Compile Include="English\Locale.Radar.cs" />
     <Compile Include="French\Locale.Client.cs" />
     <Compile Include="French\Locale.cs" />

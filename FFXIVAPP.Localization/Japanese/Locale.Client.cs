@@ -79,7 +79,7 @@ namespace FFXIVAPP.Localization.Japanese
             Dictionary.Add("app_WarningMessage", "注意！");
             Dictionary.Add("app_YesButtonText", "はい");
             Dictionary.Add("app_OtherOptionsTabHeader", "別の選択肢");
-            Dictionary.Add("app_AboutToolTip", "About");
+            Dictionary.Add("app_AboutToolTip", "約");
             Dictionary.Add("app_ManualUpdateButtonText", "手動アップデート");
             Dictionary.Add("app_TranslationsHeader", "翻訳");
             Dictionary.Add("app_DonationsContributionsHeader", "寄付＆貢献");

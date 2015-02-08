@@ -1,5 +1,5 @@
 ﻿// FFXIVAPP.Localization
-// LocaleHelper.cs
+// Locale.cs
 // 
 // Copyright © 2007 - 2015 Ryan Wilson - All Rights Reserved
 // 
@@ -27,66 +27,59 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 // POSSIBILITY OF SUCH DAMAGE. 
 
-using System.Globalization;
 using System.Windows;
-using FFXIVAPP.Localization.Japanese;
 
-namespace FFXIVAPP.Localization
+namespace FFXIVAPP.Localization.Chinese
 {
-    public static class LocaleHelper
+    internal static partial class Locale
     {
-        public static ResourceDictionary ResolveAll(CultureInfo cultureInfo)
-        {
-            var culture = cultureInfo.TwoLetterISOLanguageName;
-            ResourceDictionary dictionary;
+        private static readonly LocaleDictionary Dictionary = new LocaleDictionary();
 
-            switch (culture)
+        public static ResourceDictionary Context(string resourceName = "")
+        {
+            Dictionary.Clear();
+
+            switch (resourceName)
             {
-                case "fr":
-                    dictionary = French.Locale.Context();
+                case "client":
+                    SetClientLocale();
                     break;
-                case "ja":
-                    dictionary = Locale.Context();
+                case "event":
+                    SetEventPluginLocale();
                     break;
-                case "de":
-                    dictionary = German.Locale.Context();
+                case "informer":
+                    SetInformerPluginLocale();
                     break;
-                case "zh":
-                    dictionary = Chinese.Locale.Context();
+                case "parse":
+                    SetParsePluginLocale();
+                    break;
+                case "radar":
+                    SetRadarPluginLocale();
+                    break;
+                case "log":
+                    SetLogPluginLocale();
+                    break;
+                case "widgets":
+                    SetWidgetsPluginLocale();
                     break;
                 default:
-                    dictionary = English.Locale.Context();
+                    SetClientLocale();
+                    SetEventPluginLocale();
+                    SetInformerPluginLocale();
+                    SetParsePluginLocale();
+                    SetRadarPluginLocale();
+                    SetLogPluginLocale();
+                    SetWidgetsPluginLocale();
                     break;
             }
 
-            return dictionary;
-        }
-
-        public static ResourceDictionary ResolveOne(CultureInfo cultureInfo, string resourceName = "")
-        {
-            var culture = cultureInfo.TwoLetterISOLanguageName;
-            ResourceDictionary dictionary;
-
-            switch (culture)
+            var resourceDictionary = new ResourceDictionary();
+            foreach (dynamic resource in Dictionary)
             {
-                case "ja":
-                    dictionary = Locale.Context(resourceName);
-                    break;
-                case "de":
-                    dictionary = German.Locale.Context(resourceName);
-                    break;
-                case "fr":
-                    dictionary = French.Locale.Context(resourceName);
-                    break;
-                case "zh":
-                    dictionary = Chinese.Locale.Context(resourceName);
-                    break;
-                default:
-                    dictionary = English.Locale.Context(resourceName);
-                    break;
+                resourceDictionary.Add(resource.Key, resource.Value);
             }
 
-            return dictionary;
+            return resourceDictionary;
         }
     }
 }
